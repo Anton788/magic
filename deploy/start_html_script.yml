@@ -1,0 +1,15 @@
+---
+- hosts: all
+  become: yes
+  vars:
+       jar: maven-unit-test.jar
+       destin_jar: /home/mftiedu/exampl/maven-unit-test.jar
+       res: /home/mftiedu/exampl/test.txt
+  tasks:
+  - name: copy file
+    copy: src={{ source_file }}  dest={{ destin_file }} mode=0755
+    notify: Restart App
+
+
+  - name: run jar
+    shell: java -jar {{ destin_jar}} > {{ res }}
