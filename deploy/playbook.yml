@@ -8,7 +8,6 @@
   tasks:
   - name: copy file
     copy: src=./../java/target/{{ jar }}  dest={{ destin_jar }} mode=0755
-    notify: Restart App
 
 
   - name: run jar
