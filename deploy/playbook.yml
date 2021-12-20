@@ -7,7 +7,7 @@
        res: /home/mftiedu/exampl/test.txt
   tasks:
   - name: copy file
-    copy: src={{ source_file }}  dest={{ destin_file }} mode=0755
+    copy: src={{ jar }}  dest={{ destin_jar }} mode=0755
     notify: Restart App
 
 
