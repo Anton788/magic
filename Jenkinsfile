@@ -32,8 +32,6 @@ node {
             ])
     }
     stage('deploy') {
-        withCredentials([file(credentialsId: 'aazhogov_ansible_pass', variable: 'VAULT_PASSWORD')]) {
             sh 'ansible-playbook deploy/playbook.yml --extra-vars "ansible_sudo_pass=cHONtic" -i deploy/hosts.txt'
-        }
     }
 }
